@@ -53,7 +53,7 @@ var elsRaw = [
 },
 {
 	'img': "images/Journal.jpg",
-	'caption': "A US soldier's journal entry from 1881, detailing the calm state of the Wounded Knee area."
+	'caption': "A US soldiers journal entry from 1881, detailing the calm state of the Wounded Knee area."
 },
 {
 	'header': "The Wounded Knee Massacre Never Happens",
@@ -77,11 +77,11 @@ var elsRaw = [
 },
 {
 	'header': "The Modern Ghost Dance",
-	'text': "After the Wounded Knee Massacre, which had been caused mainly by agitation toward the Ghost Dance, the ritual rapidly lost popularity among Native tribes . . . <br> . . . if Wounded Knee hadn't happened, however, there would have been no reason for it to stop . . . <br> . . . as a result, </b>the Ghost Dance would continue to be practiced by Indian tribes even today</b>."
+	'text': "After the Wounded Knee Massacre, which had been caused mainly by agitation toward the Ghost Dance, the ritual rapidly lost popularity among Native tribes . . . <br> . . . if Wounded Knee hadn't happened, however, there would have been no reason for it to stop . . . <br> . . . as a result, <b>the Ghost Dance would continue to be practiced by Indian tribes even today</b>."
 },
 {
 	'img': "images/Flyer.jpg",
-	'text': "A modern invitation for a Ghost Dance event."
+	'caption': "A modern invitation for a Ghost Dance event."
 }
 ];
 
@@ -98,7 +98,8 @@ $(document).ready(function() {
 		el.classList.add("col");
 		if (elsRaw[i].hasOwnProperty("img")) {
 			var url = elsRaw[i]['img'];
-			el.innerHTML = "<a class=\'fancybox\' href=\'" + url + "\'><img src=\'" + elsRaw[i]['img'] + "\'></a>";
+			var cap = elsRaw[i]['caption'];
+			el.innerHTML = "<a class=\'fancybox\' href=\'" + url + "\' title=\'" + cap + "\'><img src=\'" + elsRaw[i]['img'] + "\'></a>";
 		} else {
 			el.innerHTML = "<h1>" + elsRaw[i]['header'] + "</h1>" +
 							"<p>" + elsRaw[i]['text'] + "</p>";
@@ -131,6 +132,8 @@ $(document).ready(function() {
 
 	elWidth = els[0].offsetWidth;
 });
+
+
 
 $(window).resize(function() {
 	elWidth = els[0].offsetWidth;
